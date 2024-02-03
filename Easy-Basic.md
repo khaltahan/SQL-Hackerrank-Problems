@@ -260,7 +260,7 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 SELECT DISTINCT City FROM Station WHERE UPPER(SUBSTRING(City, length(City), 1)) IN ('A', 'E', 'I', 'O', 'U');
 ```
 
-###**[Weather Observation Station 8](https://www.hackerrank.com/challenges/weather-observation-station-8/problem)**
+# **[Weather Observation Station 8](https://www.hackerrank.com/challenges/weather-observation-station-8/problem)**
 
 Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
 
@@ -284,7 +284,7 @@ WHERE UPPER(SUBSTRING(City, 1, 1)) IN ('A', 'E', 'I', 'O', 'U')
   AND UPPER(SUBSTRING(City, LENGTH(City), 1)) IN ('A', 'E', 'I', 'O', 'U');
 ```
 
-###**[Weather Observation Station 9](https://www.hackerrank.com/challenges/weather-observation-station-9/problem)**
+# **[Weather Observation Station 9](https://www.hackerrank.com/challenges/weather-observation-station-9/problem)**
 
 Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
 
@@ -305,7 +305,7 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 SELECT DISTINCT CITY FROM STATION WHERE UPPER(SUBSTRING(CITY, 1, 1)) NOT IN ('A', 'E', 'I', 'O', 'U');    
 ```
 
-###**[Weather Observation Station 10](https://www.hackerrank.com/challenges/weather-observation-station-10/problem)**
+# **[Weather Observation Station 10](https://www.hackerrank.com/challenges/weather-observation-station-10/problem)**
 
 Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
 
@@ -326,7 +326,7 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 SELECT DISTINCT CITY FROM STATION WHERE UPPER(SUBSTRING(CITY, LENGTH(City), 1)) NOT IN ('A', 'E', 'I', 'O', 'U');   
 ```
 
-###**[Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11/problem)**
+# **[Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11/problem)**
 
 Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
 
@@ -350,7 +350,7 @@ WHERE UPPER(SUBSTRING(City, 1, 1)) NOT IN ('A', 'E', 'I', 'O', 'U')
    OR UPPER(SUBSTRING(City, LENGTH(City), 1)) NOT IN ('A', 'E', 'I', 'O', 'U');
 ```
 
-###**[Weather Observation Station 12](https://www.hackerrank.com/challenges/weather-observation-station-12/problem)**
+# **[Weather Observation Station 12](https://www.hackerrank.com/challenges/weather-observation-station-12/problem)**
 
 Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
 
