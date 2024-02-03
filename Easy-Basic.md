@@ -368,5 +368,8 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 
 **Solution**
 ```sql
-SELECT DISTINCT CITY FROM STATION WHERE LOWER(SUBSTR(CITY,1,1)) NOT IN ('a','e','i','o','u') AND LOWER(SUBSTR(CITY,LENGTH(CITY),1)) NOT IN ('a','e','i','o','u');    
+SELECT DISTINCT City 
+FROM Station 
+WHERE UPPER(SUBSTRING(City, 1, 1)) NOT IN ('A', 'E', 'I', 'O', 'U')
+  AND UPPER(SUBSTRING(City, LENGTH(City), 1)) NOT IN ('A', 'E', 'I', 'O', 'U');
 ```
