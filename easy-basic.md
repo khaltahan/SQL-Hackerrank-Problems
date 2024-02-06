@@ -277,3 +277,37 @@ SELECT ROUND(ABS(MIN(LAT_N) - MAX(LAT_N)) + ABS(MIN(LONG_W) - MAX(LONG_W)), 4) F
 ```sql
 select round(sqrt(power(max(LAT_N) - min(LAT_N), 2) + power(max(LONG_W) - min(LONG_W), 2)), 4) FROM STATION;
 ```
+
+# **[Population Census](https://www.hackerrank.com/challenges/asian-population/problem)**
+
+**Solution**
+```sql
+SELECT SUM(City.population)
+FROM City
+INNER JOIN Country
+ON countrycode = code
+WHERE continent = 'Asia';
+```
+
+# **[Average Population of Each Continent](https://www.hackerrank.com/challenges/average-population-of-each-continent/problem)**
+
+**Solution**
+```sql
+SELECT continent, FLOOR(AVG(City.population)) AS average_population
+FROM Country
+INNER JOIN City
+ON countrycode = code
+GROUP BY continent
+ORDER BY average_population;
+```
+
+# **[African Cities](https://www.hackerrank.com/challenges/african-cities/problem)**
+
+**Solution**
+```sql
+SELECT City.name
+FROM City
+INNER JOIN Country
+ON City.countrycode = Country.code
+WHERE continent = 'Africa';
+```
