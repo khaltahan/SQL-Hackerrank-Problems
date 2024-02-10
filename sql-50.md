@@ -114,6 +114,7 @@ order by count(customer_number) desc
 limit 1;
 
 -- Follow up: What if more than one customer has the largest number of orders, can you find all the customer_number in this case?
+
 select customer_number
 from Orders
 group by customer_number
@@ -125,4 +126,36 @@ having count(customer_number) = (
         group by customer_number
     ) as temp
 );
+```
+
+# **[1068. Product Sales Analysis I](https://leetcode.com/problems/product-sales-analysis-i)**
+
+```sql
+select product_name, year, price
+from Product p
+right join Sales s
+on p.product_id = s.product_id;
+```
+
+# **[197. Rising Temperature](https://leetcode.com/problems/rising-temperature)**
+
+```sql
+select w1.id as Id
+from Weather w1
+join Weather w2
+on datediff(w1.recordDate, w2.recordDate) = 1
+where w1.temperature > w2.temperature;
+```
+
+# **[1661. Average Time of Process per Machine](https://leetcode.com/problems/average-time-of-process-per-machine)**
+
+```sql
+select a1.machine_id, round(avg(a2.timestamp - a1.timestamp), 3) as processing_time
+from Activity a1
+join Activity a2
+on a1.machine_id = a2.machine_id 
+    and a1.process_id = a2.process_id 
+    and a2.activity_type = 'end'
+    and a1.activity_type = 'start'
+group by a1.machine_id;
 ```
