@@ -1,1 +1,1 @@
-# SQL-Hackerrank-Problems
+# Software Solutions
