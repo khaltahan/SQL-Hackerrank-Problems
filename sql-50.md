@@ -159,3 +159,24 @@ on a1.machine_id = a2.machine_id
     and a1.activity_type = 'start'
 group by a1.machine_id;
 ```
+
+# **[577. Employee Bonus](https://leetcode.com/problems/employee-bonus)**
+
+```sql
+select name, bonus
+from Employee e
+left join Bonus b
+on e.empId = b.empId
+where bonus < 1000 or bonus is null;
+```
+
+# **[1407. Top Travellers](https://leetcode.com/problems/top-travellers)**
+
+```sql
+select name, ifnull(sum(distance), 0) as travelled_distance
+from Users u
+left join Rides r
+on u.id = r.user_id
+group by u.id
+order by travelled_distance desc, name;
+```
