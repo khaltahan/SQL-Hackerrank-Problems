@@ -1,6 +1,3 @@
-SELECT
-==============
-
 # **[1757. Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products)**
 
 ```sql
@@ -30,9 +27,6 @@ select distinct author_id as id from Views where author_id = viewer_id order by 
 ```sql
 select tweet_id from Tweets where length(content) > 15;
 ```
-
-BASIC JOINS / SUBQUERIES
-==============
 
 # **[1581. Customer Who Visited but Did Not Make Any Transactions](https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/)**
 
