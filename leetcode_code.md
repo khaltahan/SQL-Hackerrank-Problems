@@ -93,3 +93,152 @@ class Solution(object):
         s = s.split()
         return ' '.join(reversed(s))
 ```
+
+# **[1119. Remove Vowels from a String](https://leetcode.com/problems/remove-vowels-from-a-string)**
+
+```python
+class Solution(object):
+    def removeVowels(self, s):
+        ret = ''
+        for i in s:
+            if i not in 'aeiou':
+                ret += i
+        return ret
+```
+
+# **[1119. Remove Vowels from a String](https://leetcode.com/problems/remove-vowels-from-a-string)**
+
+```python
+class Solution(object):
+    def removeVowels(self, s):
+        ret = ''
+        for i in s:
+            if i not in 'aeiou':
+                ret += i
+        return ret
+```
+
+# **[1108. Defanging an IP Address](https://leetcode.com/problems/defanging-an-ip-address)**
+
+```python
+class Solution(object):
+    def defangIPaddr(self, address):
+        ret = ''
+        for i in address:
+            if i != '.':
+                ret += i
+            else:
+                ret += '[.]'
+        return ret
+```
+
+# **[1689. Partitioning Into Minimum Number Of Deci-Binary Numbers](https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers)**
+
+```python
+class Solution(object):
+    def minPartitions(self, n):
+        return int(max(n))
+```
+
+# **[771. Jewels and Stones](https://leetcode.com/problems/jewels-and-stones)**
+
+```python
+class Solution(object):
+    def numJewelsInStones(self, jewels, stones):
+        count = 0
+        setJ = set(jewels)
+        for i in setJ:
+            count += stones.count(i)
+
+        return count
+```
+
+# **[2942. Find Words Containing Character](https://leetcode.com/problems/find-words-containing-character)**
+
+```python
+class Solution(object):
+    def findWordsContaining(self, words, x):
+        ret = []
+        for i in range(len(words)):
+            if x in words[i]:
+                ret.append(i)
+        return ret
+```
+
+# **[1165. Single-Row Keyboard](https://leetcode.com/problems/single-row-keyboard)**
+
+```python
+class Solution(object):
+    def calculateTime(self, keyboard, word):
+        distance = 0
+        currentIndex = 0
+        key_map = {}
+
+        for i, key in enumerate(keyboard):
+            key_map[key] = i
+        
+        for letter in word:
+            distance += abs(key_map[letter] - currentIndex)
+            currentIndex = key_map[letter]
+
+        return distance
+```
+
+# **[1678. Goal Parser Interpretation](https://leetcode.com/problems/goal-parser-interpretation/solutions/1769513/python-4-ways-to-attack/)**
+
+```python
+class Solution(object):
+    def interpret(self, command):
+        command = command.replace('()', 'o')
+        command = command.replace('(al)', 'al')
+        return command
+```
+
+# **[2114. Maximum Number of Words Found in Sentences](https://leetcode.com/problems/maximum-number-of-words-found-in-sentences)**
+
+```python
+class Solution(object):
+    def mostWordsFound(self, sentences):
+        maxWords = 0
+        for sentence in sentences:
+            wordsInSentence = sentence.count(' ') + 1
+            maxWords = max(wordsInSentence, maxWords)
+        
+        return maxWords
+```
+
+# **[1221. Split a String in Balanced Strings](https://leetcode.com/problems/split-a-string-in-balanced-strings)**
+
+```python
+class Solution(object):
+    def balancedStringSplit(self, s):
+        balance = 0
+        count = 0
+        for i in s:
+            balance += 1 if i == 'R' else -1
+            if balance == 0:
+                count += 1
+        
+        return count
+```
+
+# **[2125. Number of Laser Beams in a Bank](https://leetcode.com/problems/number-of-laser-beams-in-a-bank)**
+
+```python
+class Solution(object):
+    def numberOfBeams(self, bank):
+        beams = 0
+        currentRow = 0
+        nextRow = 0
+
+        for i in bank:
+            if nextRow == 0 and currentRow != 0:
+                nextRow = i.count('1')
+            if currentRow == 0:
+                currentRow = i.count('1')
+            if nextRow != 0 and currentRow != 0:
+                beams += currentRow * nextRow
+                currentRow = nextRow
+                nextRow = 0
+        return beams
+```
