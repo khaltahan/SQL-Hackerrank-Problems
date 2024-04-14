@@ -242,3 +242,43 @@ class Solution(object):
                 nextRow = 0
         return beams
 ```
+
+# **[1769. Minimum Number of Operations to Move All Balls to Each Box](https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box)**
+
+```python
+class Solution(object):
+    def minOperations(self, boxes):
+        ans = [0]*len(boxes)
+        leftCount, leftCost, rightCount, rightCost, n = 0, 0, 0, 0, len(boxes)
+        for i in range(1, n):
+            if boxes[i-1] == '1': leftCount += 1
+            leftCost += leftCount # each step move to right, the cost increases by # of 1s on the left
+            ans[i] = leftCost
+        for i in range(n-2, -1, -1):
+            if boxes[i+1] == '1': rightCount += 1
+            rightCost += rightCount
+            ans[i] += rightCost
+        return ans
+```
+
+# **[1662. Check If Two String Arrays are Equivalent](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent)**
+
+```python
+class Solution(object):
+    def arrayStringsAreEqual(self, word1, word2):
+        word1 = ''.join(word1)
+        word2 = ''.join(word2)
+        return word1 == word2
+```
+
+# **[1920. Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)**
+
+```python
+class Solution(object):
+    def buildArray(self, nums):
+        ret = []
+
+        for i in range(len(nums)):
+            ret.append(nums[nums[i]])
+        return ret
+```
